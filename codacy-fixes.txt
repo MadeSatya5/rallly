@@ -1,0 +1,390 @@
+diff --git a/apps/web/src/app/api/status/route.ts b/apps/web/src/app/api/status/route.ts
+--- a/apps/web/src/app/api/status/route.ts
++++ b/apps/web/src/app/api/status/route.ts
+@@ -15,1 +15,1 @@
+-  const version = process.env.NEXT_PUBLIC_APP_VERSION || "unknown";
++  const version = process.env.NEXT_PUBLIC_APP_VERSION ?? "unknown";
+diff --git a/apps/web/sentry.edge.config.ts b/apps/web/sentry.edge.config.ts
+--- a/apps/web/sentry.edge.config.ts
++++ b/apps/web/sentry.edge.config.ts
+@@ -8,1 +8,1 @@
+-const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
++const SENTRY_DSN = process.env.SENTRY_DSN ?? process.env.NEXT_PUBLIC_SENTRY_DSN;
+diff --git a/apps/landing/src/app/[locale]/(main)/footer.tsx b/apps/landing/src/app/[locale]/(main)/footer.tsx
+--- a/apps/landing/src/app/[locale]/(main)/footer.tsx
++++ b/apps/landing/src/app/[locale]/(main)/footer.tsx
+@@ -34,1 +34,1 @@
+-          pathname?.startsWith(`/${lng}`),
++          pathname.startsWith(`/${lng}`),
+diff --git a/packages/database/prisma/seed.ts b/packages/database/prisma/seed.ts
+--- a/packages/database/prisma/seed.ts
++++ b/packages/database/prisma/seed.ts
+@@ -18,1 +18,1 @@
+-  .catch((e) => console.error(e))
++  .catch((e) => { console.error(e); })
+diff --git a/apps/web/src/app/[locale]/(space)/settings/members/components/member-dropdown-menu.tsx b/apps/web/src/app/[locale]/(space)/settings/members/components/member-dropdown-menu.tsx
+--- a/apps/web/src/app/[locale]/(space)/settings/members/components/member-dropdown-menu.tsx
++++ b/apps/web/src/app/[locale]/(space)/settings/members/components/member-dropdown-menu.tsx
+@@ -84,1 +84,1 @@
+-              onClick={() => handleRoleChange("admin")}
++              onClick={() => { handleRoleChange("admin"); }}
+@@ -94,1 +94,1 @@
+-              onClick={() => handleRoleChange("member")}
++              onClick={() => { handleRoleChange("member"); }}
+diff --git a/apps/web/instrumentation-client.ts b/apps/web/instrumentation-client.ts
+--- a/apps/web/instrumentation-client.ts
++++ b/apps/web/instrumentation-client.ts
+@@ -7,1 +7,1 @@
+-const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
++const SENTRY_DSN = process.env.SENTRY_DSN ?? process.env.NEXT_PUBLIC_SENTRY_DSN;
+diff --git a/apps/web/src/features/space/utils.ts b/apps/web/src/features/space/utils.ts
+--- a/apps/web/src/features/space/utils.ts
++++ b/apps/web/src/features/space/utils.ts
+@@ -81,1 +81,1 @@
+-      if (!subscription || !subscription.active) {
++      if (!subscription?.active) {
+diff --git a/packages/utils/src/safe-session-storage.ts b/packages/utils/src/safe-session-storage.ts
+--- a/packages/utils/src/safe-session-storage.ts
++++ b/packages/utils/src/safe-session-storage.ts
+@@ -13,1 +13,1 @@
+-        : memoryStorage.get(key) || null;
++        : memoryStorage.get(key) ?? null;
+@@ -16,1 +16,1 @@
+-      return memoryStorage.get(key) || null;
++      return memoryStorage.get(key) ?? null;
+diff --git a/apps/web/src/app/[locale]/(auth)/login/components/auth-errors.tsx b/apps/web/src/app/[locale]/(auth)/login/components/auth-errors.tsx
+--- a/apps/web/src/app/[locale]/(auth)/login/components/auth-errors.tsx
++++ b/apps/web/src/app/[locale]/(auth)/login/components/auth-errors.tsx
+@@ -8,1 +8,1 @@
+-  const error = searchParams?.get("error");
++  const error = searchParams.get("error");
+diff --git a/apps/web/src/components/optimized-avatar-image.tsx b/apps/web/src/components/optimized-avatar-image.tsx
+--- a/apps/web/src/components/optimized-avatar-image.tsx
++++ b/apps/web/src/components/optimized-avatar-image.tsx
+@@ -39,1 +39,1 @@
+-          {name?.[0]?.toUpperCase()}
++          {name[0]?.toUpperCase()}
+diff --git a/apps/web/src/lib/image-processing.ts b/apps/web/src/lib/image-processing.ts
+--- a/apps/web/src/lib/image-processing.ts
++++ b/apps/web/src/lib/image-processing.ts
+@@ -179,1 +179,1 @@
+-  const cleanup = () => URL.revokeObjectURL(url);
++  const cleanup = () => { URL.revokeObjectURL(url); };
+diff --git a/apps/web/src/components/headless-date-picker.tsx b/apps/web/src/components/headless-date-picker.tsx
+--- a/apps/web/src/components/headless-date-picker.tsx
++++ b/apps/web/src/components/headless-date-picker.tsx
+@@ -70,1 +70,1 @@
+-  } while (reachedEnd === false);
++  } while (!reachedEnd);
+diff --git a/apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx b/apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx
+--- a/apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx
++++ b/apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx
+@@ -55,1 +55,1 @@
+-              redirectTo: searchParams?.get("redirectTo") ?? undefined,
++              redirectTo: searchParams.get("redirectTo") ?? undefined,
+@@ -65,1 +65,1 @@
+-            const redirectTo = searchParams?.get("redirectTo");
++            const redirectTo = searchParams.get("redirectTo");
+diff --git a/packages/billing/src/scripts/checkout-expiry.ts b/packages/billing/src/scripts/checkout-expiry.ts
+--- a/packages/billing/src/scripts/checkout-expiry.ts
++++ b/packages/billing/src/scripts/checkout-expiry.ts
+@@ -39,1 +39,1 @@
+-createAndExpireCheckout();
++void createAndExpireCheckout();
+diff --git a/apps/web/src/contexts/poll.tsx b/apps/web/src/contexts/poll.tsx
+--- a/apps/web/src/contexts/poll.tsx
++++ b/apps/web/src/contexts/poll.tsx
+@@ -7,1 +7,1 @@
+-  const pollQuery = trpc.polls.get.useQuery({ urlId: params?.urlId as string });
++  const pollQuery = trpc.polls.get.useQuery({ urlId: params.urlId as string });
+diff --git a/apps/web/src/app/posthog-page-view.tsx b/apps/web/src/app/posthog-page-view.tsx
+--- a/apps/web/src/app/posthog-page-view.tsx
++++ b/apps/web/src/app/posthog-page-view.tsx
+@@ -14,1 +14,1 @@
+-      if (searchParams?.toString()) {
++      if (searchParams.toString()) {
+diff --git a/apps/web/src/types.ts b/apps/web/src/types.ts
+--- a/apps/web/src/types.ts
++++ b/apps/web/src/types.ts
+@@ -16,1 +16,1 @@
+-export type IconComponent<TProps extends Record<string, unknown> = {}> =
++export type IconComponent<TProps extends Record<string, unknown> = object> =
+diff --git a/packages/ui/src/sidebar.tsx b/packages/ui/src/sidebar.tsx
+--- a/packages/ui/src/sidebar.tsx
++++ b/packages/ui/src/sidebar.tsx
+@@ -103,1 +103,1 @@
+-        ? setOpenMobile((open) => !open)
++        ? setOpenMobile((open) => !open)
+@@ -104,1 +104,1 @@
+-        : setOpen((open) => !open);
++        : setOpen((open) => !open);
+diff --git a/apps/landing/src/i18n/client/i18n-provider.tsx b/apps/landing/src/i18n/client/i18n-provider.tsx
+--- a/apps/landing/src/i18n/client/i18n-provider.tsx
++++ b/apps/landing/src/i18n/client/i18n-provider.tsx
+@@ -29,1 +29,1 @@
+-    instance.use(initReactI18next).use(ICU).init();
++    void instance.use(initReactI18next).use(ICU).init();
+diff --git a/apps/web/src/app/api/stripe/webhook/handlers/checkout/completed.ts b/apps/web/src/app/api/stripe/webhook/handlers/checkout/completed.ts
+--- a/apps/web/src/app/api/stripe/webhook/handlers/checkout/completed.ts
++++ b/apps/web/src/app/api/stripe/webhook/handlers/checkout/completed.ts
+@@ -85,1 +85,1 @@
+-  if (!license || !license.data) {
++  if (!license?.data) {
+diff --git a/apps/web/src/features/scheduled-event/utils.ts b/apps/web/src/features/scheduled-event/utils.ts
+--- a/apps/web/src/features/scheduled-event/utils.ts
++++ b/apps/web/src/features/scheduled-event/utils.ts
+@@ -53,1 +53,1 @@
+-    const targetTimeZone = inviteeTimeZone || timeZone;
++    const targetTimeZone = inviteeTimeZone ?? timeZone;
+diff --git a/apps/web/src/components/layouts/poll-layout.tsx b/apps/web/src/components/layouts/poll-layout.tsx
+--- a/apps/web/src/components/layouts/poll-layout.tsx
++++ b/apps/web/src/components/layouts/poll-layout.tsx
+@@ -74,1 +74,1 @@
+-  const urlId = params?.urlId as string;
++  const urlId = params.urlId as string;
+diff --git a/packages/emails/src/send-email.tsx b/packages/emails/src/send-email.tsx
+--- a/packages/emails/src/send-email.tsx
++++ b/packages/emails/src/send-email.tsx
+@@ -98,1 +98,1 @@
+-    const subject = Template.getSubject?.(options.props, ctx);
++    const subject = Template.getSubject(options.props, ctx);
+@@ -102,1 +102,1 @@
+-        {...(options.props as any)}
++        {...(options.props as unknown)}
+@@ -114,1 +114,1 @@
+-        from: options.from || this.config.mail.from,
++        from: options.from ?? this.config.mail.from,
+diff --git a/apps/web/src/auth/providers/microsoft.ts b/apps/web/src/auth/providers/microsoft.ts
+--- a/apps/web/src/auth/providers/microsoft.ts
++++ b/apps/web/src/auth/providers/microsoft.ts
+@@ -9,1 +9,1 @@
+-      issuer: `https://login.microsoftonline.com/${process.env.MICROSOFT_TENANT_ID || "common"}/v2.0`,
++      issuer: `https://login.microsoftonline.com/${process.env.MICROSOFT_TENANT_ID ?? "common"}/v2.0`,
+diff --git a/apps/web/src/components/member-selector.tsx b/apps/web/src/components/member-selector.tsx
+--- a/apps/web/src/components/member-selector.tsx
++++ b/apps/web/src/components/member-selector.tsx
+@@ -27,1 +27,1 @@
+-  const currentMember = searchParams.get("member") || "all";
++  const currentMember = searchParams.get("member") ?? "all";
+diff --git a/apps/web/src/actions/track-poll-view.ts b/apps/web/src/actions/track-poll-view.ts
+--- a/apps/web/src/actions/track-poll-view.ts
++++ b/apps/web/src/actions/track-poll-view.ts
+@@ -16,1 +16,1 @@
+-    const ip = headersList.get("x-forwarded-for") || "unknown";
++    const ip = headersList.get("x-forwarded-for") ?? "unknown";
+diff --git a/apps/landing/src/components/posthog-page-view.tsx b/apps/landing/src/components/posthog-page-view.tsx
+--- a/apps/landing/src/components/posthog-page-view.tsx
++++ b/apps/landing/src/components/posthog-page-view.tsx
+@@ -14,1 +14,1 @@
+-      if (searchParams?.toString()) {
++      if (searchParams.toString()) {
+diff --git a/apps/web/src/components/forms/poll-options-form/dayjs-localizer.ts b/apps/web/src/components/forms/poll-options-form/dayjs-localizer.ts
+--- a/apps/web/src/components/forms/poll-options-form/dayjs-localizer.ts
++++ b/apps/web/src/components/forms/poll-options-form/dayjs-localizer.ts
+@@ -314,1 +314,1 @@
+-    const neg = /-/.test(dt.toString()) ? "-" : "";
++    const neg = dt.toString().includes('-') ? "-" : "";
+diff --git a/apps/web/src/contexts/role.tsx b/apps/web/src/contexts/role.tsx
+--- a/apps/web/src/contexts/role.tsx
++++ b/apps/web/src/contexts/role.tsx
+@@ -5,1 +5,1 @@
+-  return pathname?.includes("/poll") ? "admin" : "participant";
++  return pathname.includes("/poll") ? "admin" : "participant";
+diff --git a/apps/web/sentry.server.config.ts b/apps/web/sentry.server.config.ts
+--- a/apps/web/sentry.server.config.ts
++++ b/apps/web/sentry.server.config.ts
+@@ -7,1 +7,1 @@
+-const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
++const SENTRY_DSN = process.env.SENTRY_DSN ?? process.env.NEXT_PUBLIC_SENTRY_DSN;
+diff --git a/apps/web/src/features/billing/actions.ts b/apps/web/src/features/billing/actions.ts
+--- a/apps/web/src/features/billing/actions.ts
++++ b/apps/web/src/features/billing/actions.ts
+@@ -31,1 +31,1 @@
+-    if (!subscription || !subscription.active) {
++    if (!subscription?.active) {
+diff --git a/apps/web/src/utils/ics.test.ts b/apps/web/src/utils/ics.test.ts
+--- a/apps/web/src/utils/ics.test.ts
++++ b/apps/web/src/utils/ics.test.ts
+@@ -246,1 +246,1 @@
+-      expect(result.error || result.value).toBeDefined();
++      expect(result.error ?? result.value).toBeDefined();
+diff --git a/apps/web/src/utils/dayjs.tsx b/apps/web/src/utils/dayjs.tsx
+--- a/apps/web/src/utils/dayjs.tsx
++++ b/apps/web/src/utils/dayjs.tsx
+@@ -178,1 +178,1 @@
+-        ? normalizeTimeZone(config?.timeZone)
++        ? normalizeTimeZone(config.timeZone)
+@@ -212,1 +212,1 @@
+-        localeTimeFormat === config.localeOverrides?.timeFormat
++        localeTimeFormat === config.localeOverrides.timeFormat
+diff --git a/apps/landing/src/i18n/middleware.ts b/apps/landing/src/i18n/middleware.ts
+--- a/apps/landing/src/i18n/middleware.ts
++++ b/apps/landing/src/i18n/middleware.ts
+@@ -46,1 +46,1 @@
+-  const locale = localeInPath || preferredLocale || fallbackLng;
++  const locale = (localeInPath ?? preferredLocale) || fallbackLng;
+diff --git a/apps/landing/src/components/error-page.tsx b/apps/landing/src/components/error-page.tsx
+--- a/apps/landing/src/components/error-page.tsx
++++ b/apps/landing/src/components/error-page.tsx
+@@ -25,1 +25,1 @@
+-          {icon || (
++          {icon ?? (
+diff --git a/apps/web/src/app/api/user/verify-email-change/route.ts b/apps/web/src/app/api/user/verify-email-change/route.ts
+--- a/apps/web/src/app/api/user/verify-email-change/route.ts
++++ b/apps/web/src/app/api/user/verify-email-change/route.ts
+@@ -82,1 +82,1 @@
+-  if (!session?.user || !session.user.email) {
++  if (!session?.user?.email) {
+diff --git a/apps/web/src/app/components/search-input.tsx b/apps/web/src/app/components/search-input.tsx
+--- a/apps/web/src/app/components/search-input.tsx
++++ b/apps/web/src/app/components/search-input.tsx
+@@ -19,1 +19,1 @@
+-  const currentSearchValue = searchParams.get("q") || "";
++  const currentSearchValue = searchParams.get("q") ?? "";
+diff --git a/packages/utils/src/absolute-url.ts b/packages/utils/src/absolute-url.ts
+--- a/packages/utils/src/absolute-url.ts
++++ b/packages/utils/src/absolute-url.ts
+@@ -1,1 +1,1 @@
+-const port = process.env.PORT || 3000;
++const port = process.env.PORT ?? 3000;
+diff --git a/apps/web/src/components/poll/manage-poll/finalize-poll-dialog.tsx b/apps/web/src/components/poll/manage-poll/finalize-poll-dialog.tsx
+--- a/apps/web/src/components/poll/manage-poll/finalize-poll-dialog.tsx
++++ b/apps/web/src/components/poll/manage-poll/finalize-poll-dialog.tsx
+@@ -65,1 +65,1 @@
+-        scoreByOptionId[vote.optionId]?.[vote.type].push(response.id);
++        scoreByOptionId[vote.optionId][vote.type].push(response.id);
+diff --git a/apps/web/src/app/[locale]/(auth)/register/verify/components/otp-form.tsx b/apps/web/src/app/[locale]/(auth)/register/verify/components/otp-form.tsx
+--- a/apps/web/src/app/[locale]/(auth)/register/verify/components/otp-form.tsx
++++ b/apps/web/src/app/[locale]/(auth)/register/verify/components/otp-form.tsx
+@@ -69,1 +69,1 @@
+-      redirectTo: searchParams?.get("redirectTo") ?? "/",
++      redirectTo: searchParams.get("redirectTo") ?? "/",
+diff --git a/apps/web/src/components/copy-link-button.tsx b/apps/web/src/components/copy-link-button.tsx
+--- a/apps/web/src/components/copy-link-button.tsx
++++ b/apps/web/src/components/copy-link-button.tsx
+@@ -32,1 +32,1 @@
+-            setTimeout(() => setDidCopy(false), 1000);
++            setTimeout(() => { setDidCopy(false); }, 1000);
+diff --git a/apps/web/src/utils/get-value-by-path.ts b/apps/web/src/utils/get-value-by-path.ts
+--- a/apps/web/src/utils/get-value-by-path.ts
++++ b/apps/web/src/utils/get-value-by-path.ts
+@@ -7,1 +7,1 @@
+-  let curr: any = obj;
++  let curr: unknown = obj;
+diff --git a/apps/web/playwright.config.ts b/apps/web/playwright.config.ts
+--- a/apps/web/playwright.config.ts
++++ b/apps/web/playwright.config.ts
+@@ -9,1 +9,1 @@
+-const port = process.env.PORT || 3002;
++const port = process.env.PORT ?? 3002;
+diff --git a/packages/ui/src/helpers/component-props.ts b/packages/ui/src/helpers/component-props.ts
+--- a/packages/ui/src/helpers/component-props.ts
++++ b/packages/ui/src/helpers/component-props.ts
+@@ -5,1 +5,1 @@
+-  C extends React.ElementType<any>,
++  C extends React.ElementType<unknown>,
+diff --git a/apps/web/src/components/poll/mobile-poll/poll-option.tsx b/apps/web/src/components/poll/mobile-poll/poll-option.tsx
+--- a/apps/web/src/components/poll/mobile-poll/poll-option.tsx
++++ b/apps/web/src/components/poll/mobile-poll/poll-option.tsx
+@@ -114,1 +114,1 @@
+-  const showVotes = !!(selectedParticipantId || editable);
++  const showVotes = !!(selectedParticipantId ?? editable);
+@@ -125,1 +125,1 @@
+-      onPointerDown={() => setActive(editable)}
++      onPointerDown={() => { setActive(editable); }}
+@@ -126,1 +126,1 @@
+-      onPointerUp={() => setActive(false)}
++      onPointerUp={() => { setActive(false); }}
+@@ -127,1 +127,1 @@
+-      onPointerOut={() => setActive(false)}
++      onPointerOut={() => { setActive(false); }}
+diff --git a/apps/web/src/components/discussion/discussion.tsx b/apps/web/src/components/discussion/discussion.tsx
+--- a/apps/web/src/components/discussion/discussion.tsx
++++ b/apps/web/src/components/discussion/discussion.tsx
+@@ -267,1 +267,1 @@
+-              onClick={() => setIsWriting(true)}
++              onClick={() => { setIsWriting(true); }}
+diff --git a/apps/web/src/app/api/notifications/unsubscribe/route.ts b/apps/web/src/app/api/notifications/unsubscribe/route.ts
+--- a/apps/web/src/app/api/notifications/unsubscribe/route.ts
++++ b/apps/web/src/app/api/notifications/unsubscribe/route.ts
+@@ -19,1 +19,1 @@
+-  if (!session || !session.user?.email) {
++  if (!session?.user?.email) {
+diff --git a/apps/web/src/auth/helpers/is-email-blocked.ts b/apps/web/src/auth/helpers/is-email-blocked.ts
+--- a/apps/web/src/auth/helpers/is-email-blocked.ts
++++ b/apps/web/src/auth/helpers/is-email-blocked.ts
+@@ -20,1 +20,1 @@
+-  if (!email || !email.includes("@")) {
++  if (!email?.includes("@")) {
+diff --git a/apps/web/src/features/navigation/command-menu/command-menu.tsx b/apps/web/src/features/navigation/command-menu/command-menu.tsx
+--- a/apps/web/src/features/navigation/command-menu/command-menu.tsx
++++ b/apps/web/src/features/navigation/command-menu/command-menu.tsx
+@@ -71,1 +71,1 @@
+-            <CommandItem onSelect={() => handleSelect("/new")}>
++            <CommandItem onSelect={() => { handleSelect("/new"); }}>
+@@ -79,1 +79,1 @@
+-            <CommandItem onSelect={() => handleSelect("/")}>
++            <CommandItem onSelect={() => { handleSelect("/"); }}>
+@@ -83,1 +83,1 @@
+-            <CommandItem onSelect={() => handleSelect("/polls")}>
++            <CommandItem onSelect={() => { handleSelect("/polls"); }}>
+@@ -87,1 +87,1 @@
+-            <CommandItem onSelect={() => handleSelect("/events")}>
++            <CommandItem onSelect={() => { handleSelect("/events"); }}>
+@@ -95,1 +95,1 @@
+-            <CommandItem onSelect={() => handleSelect("/settings/profile")}>
++            <CommandItem onSelect={() => { handleSelect("/settings/profile"); }}>
+@@ -99,1 +99,1 @@
+-            <CommandItem onSelect={() => handleSelect("/settings/preferences")}>
++            <CommandItem onSelect={() => { handleSelect("/settings/preferences"); }}>
+@@ -103,1 +103,1 @@
+-            <CommandItem onSelect={() => handleSelect("/settings/billing")}>
++            <CommandItem onSelect={() => { handleSelect("/settings/billing"); }}>
+diff --git a/apps/web/src/utils/form-validation.ts b/apps/web/src/utils/form-validation.ts
+--- a/apps/web/src/utils/form-validation.ts
++++ b/apps/web/src/utils/form-validation.ts
+@@ -19,1 +19,1 @@
+-      if (!value || !value.trim()) {
++      if (!value?.trim()) {
+diff --git a/apps/web/src/components/forms/types.ts b/apps/web/src/components/forms/types.ts
+--- a/apps/web/src/components/forms/types.ts
++++ b/apps/web/src/components/forms/types.ts
+@@ -11,1 +11,1 @@
+-export interface PollFormProps<T extends Record<string, any>> {
++export interface PollFormProps<T extends Record<string, unknown>> {
+diff --git a/packages/ui/src/hooks/use-mobile.ts b/packages/ui/src/hooks/use-mobile.ts
+--- a/packages/ui/src/hooks/use-mobile.ts
++++ b/packages/ui/src/hooks/use-mobile.ts
+@@ -17,1 +17,1 @@
+-    return () => mql.removeEventListener("change", onChange);
++    return () => { mql.removeEventListener("change", onChange); };
+diff --git a/apps/web/src/components/modal/modal-provider.tsx b/apps/web/src/components/modal/modal-provider.tsx
+--- a/apps/web/src/components/modal/modal-provider.tsx
++++ b/apps/web/src/components/modal/modal-provider.tsx
+@@ -87,1 +87,1 @@
+-              ? props.content({ close: () => removeModalAt(i) })
++              ? props.content({ close: () => { removeModalAt(i); } })
+diff --git a/apps/web/src/components/forms/poll-options-form/week-calendar.tsx b/apps/web/src/components/forms/poll-options-form/week-calendar.tsx
+--- a/apps/web/src/components/forms/poll-options-form/week-calendar.tsx
++++ b/apps/web/src/components/forms/poll-options-form/week-calendar.tsx
+@@ -128,1 +128,1 @@
+-            header: function Header({ date }: any) {
++            header: function Header({ date }: unknown) {
+diff --git a/apps/web/src/app/[locale]/(space)/settings/spaces/components/spaces-list.tsx b/apps/web/src/app/[locale]/(space)/settings/spaces/components/spaces-list.tsx
+--- a/apps/web/src/app/[locale]/(space)/settings/spaces/components/spaces-list.tsx
++++ b/apps/web/src/app/[locale]/(space)/settings/spaces/components/spaces-list.tsx
+@@ -113,1 +113,1 @@
+-                    onClick={() => handleLeaveSpace(space)}
++                    onClick={() => { handleLeaveSpace(space); }}
+diff --git a/apps/web/src/app/[locale]/(optional-space)/poll/[urlId]/unsubscribe-alert.tsx b/apps/web/src/app/[locale]/(optional-space)/poll/[urlId]/unsubscribe-alert.tsx
+--- a/apps/web/src/app/[locale]/(optional-space)/poll/[urlId]/unsubscribe-alert.tsx
++++ b/apps/web/src/app/[locale]/(optional-space)/poll/[urlId]/unsubscribe-alert.tsx
+@@ -12,1 +12,1 @@
+-  const urlId = useParams<{ urlId: string }>()?.urlId;
++  const urlId = useParams<{ urlId: string }>().urlId;
+diff --git a/apps/web/src/app/[locale]/(auth)/login/verify/components/otp-form.tsx b/apps/web/src/app/[locale]/(auth)/login/verify/components/otp-form.tsx
+--- a/apps/web/src/app/[locale]/(auth)/login/verify/components/otp-form.tsx
++++ b/apps/web/src/app/[locale]/(auth)/login/verify/components/otp-form.tsx
+@@ -72,1 +72,1 @@
+-        window.location.href = searchParams?.get("redirectTo") ?? "/";
++        window.location.href = searchParams.get("redirectTo") ?? "/";
