@@ -1,3 +1,9 @@
+diff --git a/apps/web/src/components/headless-date-picker.tsx b/apps/web/src/components/headless-date-picker.tsx
+--- a/apps/web/src/components/headless-date-picker.tsx
++++ b/apps/web/src/components/headless-date-picker.tsx
+@@ -70,1 +70,1 @@
+-  } while (reachedEnd === false);
++  } while (!reachedEnd);
 diff --git a/apps/web/src/app/api/status/route.ts b/apps/web/src/app/api/status/route.ts
 --- a/apps/web/src/app/api/status/route.ts
 +++ b/apps/web/src/app/api/status/route.ts
@@ -64,18 +70,6 @@ diff --git a/apps/web/src/components/optimized-avatar-image.tsx b/apps/web/src/c
 @@ -39,1 +39,1 @@
 -          {name?.[0]?.toUpperCase()}
 +          {name[0]?.toUpperCase()}
-diff --git a/apps/web/src/lib/image-processing.ts b/apps/web/src/lib/image-processing.ts
---- a/apps/web/src/lib/image-processing.ts
-+++ b/apps/web/src/lib/image-processing.ts
-@@ -179,1 +179,1 @@
--  const cleanup = () => URL.revokeObjectURL(url);
-+  const cleanup = () => { URL.revokeObjectURL(url); };
-diff --git a/apps/web/src/components/headless-date-picker.tsx b/apps/web/src/components/headless-date-picker.tsx
---- a/apps/web/src/components/headless-date-picker.tsx
-+++ b/apps/web/src/components/headless-date-picker.tsx
-@@ -70,1 +70,1 @@
--  } while (reachedEnd === false);
-+  } while (!reachedEnd);
 diff --git a/apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx b/apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx
 --- a/apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx
 +++ b/apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx
