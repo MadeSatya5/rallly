@@ -1,0 +1,5 @@
+--- apps/web/src/app/[locale]/(auth)/login/components/auth-errors.tsx
++++ apps/web/src/app/[locale]/(auth)/login/components/auth-errors.tsx
+@@ -8 +8 @@
+-  const error = searchParams?.get("error");
++  const error = searchParams.get("error");

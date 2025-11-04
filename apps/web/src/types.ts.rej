@@ -1,0 +1,5 @@
+--- apps/web/src/types.ts
++++ apps/web/src/types.ts
+@@ -16 +16 @@
+-export type IconComponent<TProps extends Record<string, unknown> = {}> =
++export type IconComponent<TProps extends Record<string, unknown> = object> =

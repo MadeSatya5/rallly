@@ -1,0 +1,5 @@
+--- apps/landing/src/components/error-page.tsx
++++ apps/landing/src/components/error-page.tsx
+@@ -25 +25 @@
+-          {icon || (
++          {icon ?? (

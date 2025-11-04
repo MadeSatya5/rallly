@@ -78,7 +78,7 @@ export async function getTotalSeatsForSpace(spaceId: string): Promise<number> {
       // For cloud-hosted instances, get seat count from Stripe subscription
       const subscription = await getSpaceSubscription(spaceId);
 
-      if (!subscription || !subscription.active) {
+      if (!subscription?.active) {
         // Return default limit for spaces without active subscriptions
         return DEFAULT_SEAT_LIMIT;
       }

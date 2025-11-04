@@ -1,0 +1,5 @@
+--- apps/web/playwright.config.ts
++++ apps/web/playwright.config.ts
+@@ -9 +9 @@
+-const port = process.env.PORT || 3002;
++const port = process.env.PORT ?? 3002;

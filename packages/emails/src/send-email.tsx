@@ -95,11 +95,11 @@ export class EmailClient {
     };
 
     const Template = templates[templateName] as TemplateComponent<T>;
-    const subject = Template.getSubject?.(options.props, ctx);
+    const subject = Template.getSubject(options.props, ctx);
     const component = (
       <Template
         // biome-ignore lint/suspicious/noExplicitAny: Fix this later
-        {...(options.props as any)}
+        {...(options.props as unknown)}
         ctx={ctx}
       />
     );
@@ -111,7 +111,7 @@ export class EmailClient {
 
     try {
       await this.sendEmail({
-        from: options.from || this.config.mail.from,
+        from: options.from ?? this.config.mail.from,
         to: options.to,
         subject,
         html,

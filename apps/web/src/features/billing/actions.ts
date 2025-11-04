@@ -28,7 +28,7 @@ export const updateSeatsAction = spaceActionClient
     // Get current subscription
     const subscription = await getSpaceSubscription(ctx.space.id);
 
-    if (!subscription || !subscription.active) {
+    if (!subscription?.active) {
       throw new AppError({
         code: "PAYMENT_REQUIRED",
         message: "No active subscription found for this space",

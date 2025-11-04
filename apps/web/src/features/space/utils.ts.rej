@@ -1,0 +1,5 @@
+--- apps/web/src/features/space/utils.ts
++++ apps/web/src/features/space/utils.ts
+@@ -81 +81 @@
+-      if (!subscription || !subscription.active) {
++      if (!subscription?.active) {

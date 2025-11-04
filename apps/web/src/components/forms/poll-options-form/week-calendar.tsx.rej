@@ -1,0 +1,5 @@
+--- apps/web/src/components/forms/poll-options-form/week-calendar.tsx
++++ apps/web/src/components/forms/poll-options-form/week-calendar.tsx
+@@ -128 +128 @@
+-            header: function Header({ date }: any) {
++            header: function Header({ date }: unknown) {

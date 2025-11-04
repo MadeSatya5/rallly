@@ -175,7 +175,7 @@ export const DayjsProvider: React.FunctionComponent<{
   const preferredTimeZone = React.useMemo(
     () =>
       config?.timeZone
-        ? normalizeTimeZone(config?.timeZone)
+        ? normalizeTimeZone(config.timeZone)
         : getBrowserTimeZone(),
     [config?.timeZone],
   );
@@ -209,7 +209,7 @@ export const DayjsProvider: React.FunctionComponent<{
       ...dayjsLocale,
       weekStart,
       formats:
-        localeTimeFormat === config.localeOverrides?.timeFormat
+        localeTimeFormat === config.localeOverrides.timeFormat
           ? dayjsLocale.formats
           : {
               ...dayjsLocale.formats,

@@ -43,7 +43,7 @@ export function i18nMiddleware(req: NextRequest) {
   });
 
   // Ensure we always have a valid locale, fallback to fallbackLng if needed
-  const locale = localeInPath || preferredLocale || fallbackLng;
+  const locale = (localeInPath ?? preferredLocale) || fallbackLng;
   const headers = createLocalizedHeaders(req, locale);
 
   // If the URL starts with the fallback language prefix, redirect to remove it

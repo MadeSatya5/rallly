@@ -1,0 +1,5 @@
+--- apps/web/src/components/headless-date-picker.tsx
++++ apps/web/src/components/headless-date-picker.tsx
+@@ -70 +70 @@
+-  } while (reachedEnd === false);
++  } while (!reachedEnd);

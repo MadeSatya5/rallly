@@ -1,0 +1,8 @@
+--- packages/ui/src/sidebar.tsx
++++ packages/ui/src/sidebar.tsx
+@@ -103 +103 @@
+-        ? setOpenMobile((open) => !open)
++        ? setOpenMobile((open) => !open)
+@@ -104 +104 @@
+-        : setOpen((open) => !open);
++        : setOpen((open) => !open);

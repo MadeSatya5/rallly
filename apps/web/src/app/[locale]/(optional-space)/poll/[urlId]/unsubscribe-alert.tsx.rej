@@ -1,0 +1,5 @@
+--- apps/web/src/app/[locale]/(optional-space)/poll/[urlId]/unsubscribe-alert.tsx
++++ apps/web/src/app/[locale]/(optional-space)/poll/[urlId]/unsubscribe-alert.tsx
+@@ -12 +12 @@
+-  const urlId = useParams<{ urlId: string }>()?.urlId;
++  const urlId = useParams<{ urlId: string }>().urlId;

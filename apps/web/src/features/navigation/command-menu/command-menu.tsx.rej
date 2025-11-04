@@ -1,0 +1,23 @@
+--- apps/web/src/features/navigation/command-menu/command-menu.tsx
++++ apps/web/src/features/navigation/command-menu/command-menu.tsx
+@@ -71 +71 @@
+-            <CommandItem onSelect={() => handleSelect("/new")}>
++            <CommandItem onSelect={() => { handleSelect("/new"); }}>
+@@ -79 +79 @@
+-            <CommandItem onSelect={() => handleSelect("/")}>
++            <CommandItem onSelect={() => { handleSelect("/"); }}>
+@@ -83 +83 @@
+-            <CommandItem onSelect={() => handleSelect("/polls")}>
++            <CommandItem onSelect={() => { handleSelect("/polls"); }}>
+@@ -87 +87 @@
+-            <CommandItem onSelect={() => handleSelect("/events")}>
++            <CommandItem onSelect={() => { handleSelect("/events"); }}>
+@@ -95 +95 @@
+-            <CommandItem onSelect={() => handleSelect("/settings/profile")}>
++            <CommandItem onSelect={() => { handleSelect("/settings/profile"); }}>
+@@ -99 +99 @@
+-            <CommandItem onSelect={() => handleSelect("/settings/preferences")}>
++            <CommandItem onSelect={() => { handleSelect("/settings/preferences"); }}>
+@@ -103 +103 @@
+-            <CommandItem onSelect={() => handleSelect("/settings/billing")}>
++            <CommandItem onSelect={() => { handleSelect("/settings/billing"); }}>

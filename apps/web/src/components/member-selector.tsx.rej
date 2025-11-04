@@ -1,0 +1,5 @@
+--- apps/web/src/components/member-selector.tsx
++++ apps/web/src/components/member-selector.tsx
+@@ -27 +27 @@
+-  const currentMember = searchParams.get("member") || "all";
++  const currentMember = searchParams.get("member") ?? "all";

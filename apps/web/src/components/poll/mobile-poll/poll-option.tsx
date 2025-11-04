@@ -111,7 +111,7 @@ const PollOption: React.FunctionComponent<PollOptionProps> = ({
   optionId,
 }) => {
   const poll = usePoll();
-  const showVotes = !!(selectedParticipantId || editable);
+  const showVotes = !!(selectedParticipantId ?? editable);
   const role = useRole();
   const selectorRef = React.useRef<HTMLButtonElement>(null);
   const [active, setActive] = React.useState(false);
@@ -122,9 +122,9 @@ const PollOption: React.FunctionComponent<PollOptionProps> = ({
       className={cn("space-y-4 bg-white p-4", {
         "bg-gray-500/5": editable && active,
       })}
-      onPointerDown={() => setActive(editable)}
-      onPointerUp={() => setActive(false)}
-      onPointerOut={() => setActive(false)}
+      onPointerDown={() => { setActive(editable); }}
+      onPointerUp={() => { setActive(false); }}
+      onPointerOut={() => { setActive(false); }}
       data-testid="poll-option"
       onClick={() => {
         selectorRef.current?.click();

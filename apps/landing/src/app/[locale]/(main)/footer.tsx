@@ -31,7 +31,7 @@ const LanguageSelect = () => {
       value={i18n.language}
       onValueChange={(newLocale) => {
         const isLocalizedPath = supportedLngs.some((lng) =>
-          pathname?.startsWith(`/${lng}`),
+          pathname.startsWith(`/${lng}`),
         );
 
         const newPath = isLocalizedPath

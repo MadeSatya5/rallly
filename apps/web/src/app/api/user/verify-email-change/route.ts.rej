@@ -1,0 +1,5 @@
+--- apps/web/src/app/api/user/verify-email-change/route.ts
++++ apps/web/src/app/api/user/verify-email-change/route.ts
+@@ -82 +82 @@
+-  if (!session?.user || !session.user.email) {
++  if (!session?.user?.email) {

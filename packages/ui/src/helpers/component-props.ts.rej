@@ -1,0 +1,5 @@
+--- packages/ui/src/helpers/component-props.ts
++++ packages/ui/src/helpers/component-props.ts
+@@ -5 +5 @@
+-  C extends React.ElementType<any>,
++  C extends React.ElementType<unknown>,

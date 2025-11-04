@@ -1,0 +1,8 @@
+--- apps/web/src/utils/dayjs.tsx
++++ apps/web/src/utils/dayjs.tsx
+@@ -178 +178 @@
+-        ? normalizeTimeZone(config?.timeZone)
++        ? normalizeTimeZone(config.timeZone)
+@@ -212 +212 @@
+-        localeTimeFormat === config.localeOverrides?.timeFormat
++        localeTimeFormat === config.localeOverrides.timeFormat

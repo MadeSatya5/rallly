@@ -24,7 +24,7 @@ export function MemberSelector({ members }: MemberSelectorProps) {
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
 
-  const currentMember = searchParams.get("member") || "all";
+  const currentMember = searchParams.get("member") ?? "all";
   const [optimisticMember, setOptimisticMember] = useOptimistic(currentMember);
 
   const handleMemberChange = (memberId: string) => {

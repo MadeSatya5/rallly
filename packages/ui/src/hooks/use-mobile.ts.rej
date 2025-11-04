@@ -1,0 +1,5 @@
+--- packages/ui/src/hooks/use-mobile.ts
++++ packages/ui/src/hooks/use-mobile.ts
+@@ -17 +17 @@
+-    return () => mql.removeEventListener("change", onChange);
++    return () => { mql.removeEventListener("change", onChange); };

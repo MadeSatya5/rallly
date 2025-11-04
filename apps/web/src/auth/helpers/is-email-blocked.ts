@@ -17,7 +17,7 @@ import { prisma } from "@rallly/database";
  * @returns The normalized email address
  */
 function normalizeEmail(email: string): string {
-  if (!email || !email.includes("@")) {
+  if (!email?.includes("@")) {
     return email;
   }
 

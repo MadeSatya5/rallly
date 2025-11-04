@@ -1,0 +1,5 @@
+--- apps/web/src/utils/ics.test.ts
++++ apps/web/src/utils/ics.test.ts
+@@ -246 +246 @@
+-      expect(result.error || result.value).toBeDefined();
++      expect(result.error ?? result.value).toBeDefined();

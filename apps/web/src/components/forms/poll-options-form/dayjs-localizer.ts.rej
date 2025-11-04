@@ -1,0 +1,5 @@
+--- apps/web/src/components/forms/poll-options-form/dayjs-localizer.ts
++++ apps/web/src/components/forms/poll-options-form/dayjs-localizer.ts
+@@ -314 +314 @@
+-    const neg = /-/.test(dt.toString()) ? "-" : "";
++    const neg = dt.toString().includes('-') ? "-" : "";

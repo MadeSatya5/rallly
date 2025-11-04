@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 export function AuthErrors() {
   const { t } = useTranslation();
   const searchParams = useSearchParams();
-  const error = searchParams?.get("error");
+  const error = searchParams.get("error");
   switch (error) {
     case "OAuthAccountNotLinked":
       return (

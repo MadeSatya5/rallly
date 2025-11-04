@@ -1,0 +1,5 @@
+--- apps/web/src/app/[locale]/(auth)/register/verify/components/otp-form.tsx
++++ apps/web/src/app/[locale]/(auth)/register/verify/components/otp-form.tsx
+@@ -69 +69 @@
+-      redirectTo: searchParams?.get("redirectTo") ?? "/",
++      redirectTo: searchParams.get("redirectTo") ?? "/",

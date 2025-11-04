@@ -1,0 +1,5 @@
+--- apps/web/src/contexts/poll.tsx
++++ apps/web/src/contexts/poll.tsx
+@@ -7 +7 @@
+-  const pollQuery = trpc.polls.get.useQuery({ urlId: params?.urlId as string });
++  const pollQuery = trpc.polls.get.useQuery({ urlId: params.urlId as string });

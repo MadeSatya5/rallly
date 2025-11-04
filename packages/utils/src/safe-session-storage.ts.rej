@@ -1,0 +1,8 @@
+--- packages/utils/src/safe-session-storage.ts
++++ packages/utils/src/safe-session-storage.ts
+@@ -13 +13 @@
+-        : memoryStorage.get(key) || null;
++        : memoryStorage.get(key) ?? null;
+@@ -16 +16 @@
+-      return memoryStorage.get(key) || null;
++      return memoryStorage.get(key) ?? null;

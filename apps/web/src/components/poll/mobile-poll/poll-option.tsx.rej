@@ -1,0 +1,14 @@
+--- apps/web/src/components/poll/mobile-poll/poll-option.tsx
++++ apps/web/src/components/poll/mobile-poll/poll-option.tsx
+@@ -114 +114 @@
+-  const showVotes = !!(selectedParticipantId || editable);
++  const showVotes = !!(selectedParticipantId ?? editable);
+@@ -125 +125 @@
+-      onPointerDown={() => setActive(editable)}
++      onPointerDown={() => { setActive(editable); }}
+@@ -126 +126 @@
+-      onPointerUp={() => setActive(false)}
++      onPointerUp={() => { setActive(false); }}
+@@ -127 +127 @@
+-      onPointerOut={() => setActive(false)}
++      onPointerOut={() => { setActive(false); }}

@@ -243,7 +243,7 @@ describe("createIcsEvent", () => {
 
       // The ics library should handle this - we just need to ensure we don't crash
       expect(result).toBeDefined();
-      expect(result.error || result.value).toBeDefined();
+      expect(result.error ?? result.value).toBeDefined();
     });
   });
 });

@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 export function UnsubscribeAlert() {
   const { t } = useTranslation("app");
 
-  const urlId = useParams<{ urlId: string }>()?.urlId;
+  const urlId = useParams<{ urlId: string }>().urlId;
 
   useEffect(() => {
     if (!urlId) return;

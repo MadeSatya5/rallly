@@ -1,0 +1,5 @@
+--- apps/web/src/components/poll/manage-poll/finalize-poll-dialog.tsx
++++ apps/web/src/components/poll/manage-poll/finalize-poll-dialog.tsx
+@@ -65 +65 @@
+-        scoreByOptionId[vote.optionId]?.[vote.type].push(response.id);
++        scoreByOptionId[vote.optionId][vote.type].push(response.id);

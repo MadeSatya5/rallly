@@ -1,0 +1,5 @@
+--- apps/web/src/components/optimized-avatar-image.tsx
++++ apps/web/src/components/optimized-avatar-image.tsx
+@@ -39 +39 @@
+-          {name?.[0]?.toUpperCase()}
++          {name[0]?.toUpperCase()}

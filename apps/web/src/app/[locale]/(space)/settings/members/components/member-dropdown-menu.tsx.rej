@@ -1,0 +1,8 @@
+--- apps/web/src/app/[locale]/(space)/settings/members/components/member-dropdown-menu.tsx
++++ apps/web/src/app/[locale]/(space)/settings/members/components/member-dropdown-menu.tsx
+@@ -84 +84 @@
+-              onClick={() => handleRoleChange("admin")}
++              onClick={() => { handleRoleChange("admin"); }}
+@@ -94 +94 @@
+-              onClick={() => handleRoleChange("member")}
++              onClick={() => { handleRoleChange("member"); }}

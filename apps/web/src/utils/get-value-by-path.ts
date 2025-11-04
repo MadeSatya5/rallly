@@ -4,7 +4,7 @@ export function getValueByPath<O extends Record<string, unknown>>(
 ): unknown {
   const pathArray = path.split(".");
   // biome-ignore lint/suspicious/noExplicitAny: Fix this later
-  let curr: any = obj;
+  let curr: unknown = obj;
   for (const part of pathArray) {
     if (curr[part] === undefined) {
       return undefined;

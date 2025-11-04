@@ -1,0 +1,5 @@
+--- apps/web/src/actions/track-poll-view.ts
++++ apps/web/src/actions/track-poll-view.ts
+@@ -16 +16 @@
+-    const ip = headersList.get("x-forwarded-for") || "unknown";
++    const ip = headersList.get("x-forwarded-for") ?? "unknown";

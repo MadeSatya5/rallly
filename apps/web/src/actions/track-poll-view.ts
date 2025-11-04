@@ -13,7 +13,7 @@ export async function trackPollView(pollId: string) {
   try {
     const headersList = await headers();
     const userAgent = headersList.get("user-agent");
-    const ip = headersList.get("x-forwarded-for") || "unknown";
+    const ip = headersList.get("x-forwarded-for") ?? "unknown";
 
     const userId = await getUserId();
     await prisma.pollView.create({

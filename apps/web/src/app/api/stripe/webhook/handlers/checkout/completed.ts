@@ -82,7 +82,7 @@ async function handleSelfHostedCheckoutSessionCompleted(
     },
   });
 
-  if (!license || !license.data) {
+  if (!license?.data) {
     throw new Error(
       `Failed to create license for session: ${checkoutSession.id} - ${license?.error}`,
     );

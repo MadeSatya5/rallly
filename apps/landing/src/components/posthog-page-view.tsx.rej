@@ -1,0 +1,5 @@
+--- apps/landing/src/components/posthog-page-view.tsx
++++ apps/landing/src/components/posthog-page-view.tsx
+@@ -14 +14 @@
+-      if (searchParams?.toString()) {
++      if (searchParams.toString()) {

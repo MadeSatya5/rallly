@@ -71,7 +71,7 @@ const Layout = ({ children }: React.PropsWithChildren) => {
 export const PollLayout = ({ children }: React.PropsWithChildren) => {
   const params = useParams();
 
-  const urlId = params?.urlId as string;
+  const urlId = params.urlId as string;
 
   if (!urlId) {
     // probably navigating away

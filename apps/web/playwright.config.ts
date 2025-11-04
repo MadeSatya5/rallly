@@ -6,7 +6,7 @@ const ci = process.env.CI === "true";
 
 loadEnvConfig(process.cwd());
 
-const port = process.env.PORT || 3002;
+const port = process.env.PORT ?? 3002;
 // Set webServer.url and use.baseURL with the location of the WebServer respecting the correct set port
 const baseURL = `http://localhost:${port}`;
 

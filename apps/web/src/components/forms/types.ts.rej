@@ -1,0 +1,5 @@
+--- apps/web/src/components/forms/types.ts
++++ apps/web/src/components/forms/types.ts
+@@ -11 +11 @@
+-export interface PollFormProps<T extends Record<string, any>> {
++export interface PollFormProps<T extends Record<string, unknown>> {

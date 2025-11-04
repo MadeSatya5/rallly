@@ -1,0 +1,5 @@
+--- apps/landing/src/app/[locale]/(main)/footer.tsx
++++ apps/landing/src/app/[locale]/(main)/footer.tsx
+@@ -34 +34 @@
+-          pathname?.startsWith(`/${lng}`),
++          pathname.startsWith(`/${lng}`),
