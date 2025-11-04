@@ -1,0 +1,5 @@
+--- apps/landing/src/i18n/client/i18n-provider.tsx
++++ apps/landing/src/i18n/client/i18n-provider.tsx
+@@ -29 +29 @@
+-    instance.use(initReactI18next).use(ICU).init();
++    void instance.use(initReactI18next).use(ICU).init();

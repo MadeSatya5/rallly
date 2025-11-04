@@ -1,0 +1,5 @@
+--- apps/web/src/features/scheduled-event/utils.ts
++++ apps/web/src/features/scheduled-event/utils.ts
+@@ -53 +53 @@
+-    const targetTimeZone = inviteeTimeZone || timeZone;
++    const targetTimeZone = inviteeTimeZone ?? timeZone;

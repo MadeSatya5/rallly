@@ -1,0 +1,5 @@
+--- apps/web/src/features/billing/actions.ts
++++ apps/web/src/features/billing/actions.ts
+@@ -31 +31 @@
+-    if (!subscription || !subscription.active) {
++    if (!subscription?.active) {

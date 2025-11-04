@@ -1,0 +1,5 @@
+--- apps/web/src/components/layouts/poll-layout.tsx
++++ apps/web/src/components/layouts/poll-layout.tsx
+@@ -74 +74 @@
+-  const urlId = params?.urlId as string;
++  const urlId = params.urlId as string;

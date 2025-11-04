@@ -1,0 +1,5 @@
+--- apps/web/src/app/api/stripe/webhook/handlers/checkout/completed.ts
++++ apps/web/src/app/api/stripe/webhook/handlers/checkout/completed.ts
+@@ -85 +85 @@
+-  if (!license || !license.data) {
++  if (!license?.data) {

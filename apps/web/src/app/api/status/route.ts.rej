@@ -1,0 +1,5 @@
+--- apps/web/src/app/api/status/route.ts
++++ apps/web/src/app/api/status/route.ts
+@@ -15 +15 @@
+-  const version = process.env.NEXT_PUBLIC_APP_VERSION || "unknown";
++  const version = process.env.NEXT_PUBLIC_APP_VERSION ?? "unknown";

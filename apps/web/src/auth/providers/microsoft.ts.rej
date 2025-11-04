@@ -1,0 +1,5 @@
+--- apps/web/src/auth/providers/microsoft.ts
++++ apps/web/src/auth/providers/microsoft.ts
+@@ -9 +9 @@
+-      issuer: `https://login.microsoftonline.com/${process.env.MICROSOFT_TENANT_ID || "common"}/v2.0`,
++      issuer: `https://login.microsoftonline.com/${process.env.MICROSOFT_TENANT_ID ?? "common"}/v2.0`,

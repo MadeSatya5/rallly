@@ -1,0 +1,5 @@
+--- apps/web/src/components/copy-link-button.tsx
++++ apps/web/src/components/copy-link-button.tsx
+@@ -32 +32 @@
+-            setTimeout(() => setDidCopy(false), 1000);
++            setTimeout(() => { setDidCopy(false); }, 1000);

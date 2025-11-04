@@ -81,7 +81,7 @@ export function MemberDropdownMenu({ member }: { member: MemberDTO }) {
         <DropdownMenuContent align="end">
           {member.role === "member" ? (
             <DropdownMenuItem
-              onClick={() => handleRoleChange("admin")}
+              onClick={() => { handleRoleChange("admin"); }}
               disabled={!canUpdateMember}
             >
               <Icon>
@@ -91,7 +91,7 @@ export function MemberDropdownMenu({ member }: { member: MemberDTO }) {
             </DropdownMenuItem>
           ) : (
             <DropdownMenuItem
-              onClick={() => handleRoleChange("member")}
+              onClick={() => { handleRoleChange("member"); }}
               disabled={!canUpdateMember}
             >
               <Icon>

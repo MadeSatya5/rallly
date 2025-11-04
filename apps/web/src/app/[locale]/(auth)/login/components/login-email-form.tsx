@@ -52,7 +52,7 @@ export function LoginWithEmailForm() {
           try {
             const res = await signIn("email", {
               email: identifier,
-              redirectTo: searchParams?.get("redirectTo") ?? undefined,
+              redirectTo: searchParams.get("redirectTo") ?? undefined,
               redirect: false,
             });
 
@@ -62,7 +62,7 @@ export function LoginWithEmailForm() {
 
             await setVerificationEmail(identifier);
             // redirect to verify page with redirectTo
-            const redirectTo = searchParams?.get("redirectTo");
+            const redirectTo = searchParams.get("redirectTo");
             router.push(
               `/login/verify${
                 redirectTo

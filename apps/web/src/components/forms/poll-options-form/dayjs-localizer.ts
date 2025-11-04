@@ -311,7 +311,7 @@ export default function (dayjs) {
      * we can actually compare.
      */
     const dt = new Date();
-    const neg = /-/.test(dt.toString()) ? "-" : "";
+    const neg = dt.toString().includes('-') ? "-" : "";
     const dtOffset = dt.getTimezoneOffset();
     const comparator = Number(`${neg}${Math.abs(dtOffset)}`);
     // dayjs correctly provides positive/negative offset, as expected

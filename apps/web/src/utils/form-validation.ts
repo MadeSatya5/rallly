@@ -16,7 +16,7 @@ export const useFormValidation = () => {
 
   return {
     requiredString: (name?: string) => (value: string) => {
-      if (!value || !value.trim()) {
+      if (!value?.trim()) {
         return t("requiredString", { name });
       }
     },

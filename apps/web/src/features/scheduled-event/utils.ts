@@ -50,7 +50,7 @@ export const formatEventDateTime = ({
 
   if (timeZone) {
     // If event has a timezone, adjust to invitee's timezone if available
-    const targetTimeZone = inviteeTimeZone || timeZone;
+    const targetTimeZone = inviteeTimeZone ?? timeZone;
 
     const startTime = dayjs(start).tz(targetTimeZone);
     const endTime = dayjs(end).tz(targetTimeZone);

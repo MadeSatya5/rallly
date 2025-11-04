@@ -16,7 +16,7 @@ export function SearchInput({ placeholder }: { placeholder: string }) {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   // Get current search value from URL
-  const currentSearchValue = searchParams.get("q") || "";
+  const currentSearchValue = searchParams.get("q") ?? "";
 
   // Track input value in state
   const [inputValue, setInputValue] = React.useState(currentSearchValue);

@@ -1,0 +1,5 @@
+--- apps/web/src/auth/helpers/is-email-blocked.ts
++++ apps/web/src/auth/helpers/is-email-blocked.ts
+@@ -20 +20 @@
+-  if (!email || !email.includes("@")) {
++  if (!email?.includes("@")) {

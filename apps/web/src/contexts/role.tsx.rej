@@ -1,0 +1,5 @@
+--- apps/web/src/contexts/role.tsx
++++ apps/web/src/contexts/role.tsx
+@@ -5 +5 @@
+-  return pathname?.includes("/poll") ? "admin" : "participant";
++  return pathname.includes("/poll") ? "admin" : "participant";

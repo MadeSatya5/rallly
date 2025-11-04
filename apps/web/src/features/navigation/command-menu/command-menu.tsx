@@ -68,7 +68,7 @@ export function CommandMenu() {
             </span>
           </CommandEmpty>
           <CommandGroup heading={<Trans i18nKey="polls" defaults="Actions" />}>
-            <CommandItem onSelect={() => handleSelect("/new")}>
+            <CommandItem onSelect={() => { handleSelect("/new"); }}>
               <Icon>
                 <PlusIcon />
               </Icon>
@@ -76,15 +76,15 @@ export function CommandMenu() {
             </CommandItem>
           </CommandGroup>
           <CommandGroup heading="Navigation">
-            <CommandItem onSelect={() => handleSelect("/")}>
+            <CommandItem onSelect={() => { handleSelect("/"); }}>
               <HomePageIcon size="sm" />
               <NavigationCommandLabel label={t("home")} />
             </CommandItem>
-            <CommandItem onSelect={() => handleSelect("/polls")}>
+            <CommandItem onSelect={() => { handleSelect("/polls"); }}>
               <PollPageIcon size="sm" />
               <NavigationCommandLabel label={t("polls")} />
             </CommandItem>
-            <CommandItem onSelect={() => handleSelect("/events")}>
+            <CommandItem onSelect={() => { handleSelect("/events"); }}>
               <EventPageIcon size="sm" />
               <NavigationCommandLabel label={t("events")} />
             </CommandItem>
@@ -92,15 +92,15 @@ export function CommandMenu() {
           <CommandGroup
             heading={<Trans i18nKey="settings" defaults="Settings" />}
           >
-            <CommandItem onSelect={() => handleSelect("/settings/profile")}>
+            <CommandItem onSelect={() => { handleSelect("/settings/profile"); }}>
               <ProfilePageIcon size="sm" />
               <NavigationCommandLabel label={t("profile")} />
             </CommandItem>
-            <CommandItem onSelect={() => handleSelect("/settings/preferences")}>
+            <CommandItem onSelect={() => { handleSelect("/settings/preferences"); }}>
               <PreferencesPageIcon size="sm" />
               <NavigationCommandLabel label={t("preferences")} />
             </CommandItem>
-            <CommandItem onSelect={() => handleSelect("/settings/billing")}>
+            <CommandItem onSelect={() => { handleSelect("/settings/billing"); }}>
               <BillingPageIcon size="sm" />
               <NavigationCommandLabel label={t("billing")} />
             </CommandItem>

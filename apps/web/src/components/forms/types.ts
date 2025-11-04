@@ -8,7 +8,7 @@ export type NewEventData = PollDetailsData &
   PollSettingsFormData;
 
 // biome-ignore lint/suspicious/noExplicitAny: Fix this later
-export interface PollFormProps<T extends Record<string, any>> {
+export interface PollFormProps<T extends Record<string, unknown>> {
   onSubmit?: (data: T) => void;
   onChange?: (data: Partial<T>) => void;
   defaultValues?: Partial<T>;

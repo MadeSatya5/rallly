@@ -84,7 +84,7 @@ const ModalProvider: React.FunctionComponent<ModalProviderProps> = ({
           {...props}
           content={
             typeof props.content === "function"
-              ? props.content({ close: () => removeModalAt(i) })
+              ? props.content({ close: () => { removeModalAt(i); } })
               : props.content
           }
           onOk={() => {

@@ -1,0 +1,5 @@
+--- apps/web/src/app/api/notifications/unsubscribe/route.ts
++++ apps/web/src/app/api/notifications/unsubscribe/route.ts
+@@ -19 +19 @@
+-  if (!session || !session.user?.email) {
++  if (!session?.user?.email) {

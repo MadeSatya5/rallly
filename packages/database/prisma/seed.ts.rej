@@ -1,0 +1,5 @@
+--- packages/database/prisma/seed.ts
++++ packages/database/prisma/seed.ts
+@@ -18 +18 @@
+-  .catch((e) => console.error(e))
++  .catch((e) => { console.error(e); })

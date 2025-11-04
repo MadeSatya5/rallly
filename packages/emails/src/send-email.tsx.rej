@@ -1,0 +1,11 @@
+--- packages/emails/src/send-email.tsx
++++ packages/emails/src/send-email.tsx
+@@ -98 +98 @@
+-    const subject = Template.getSubject?.(options.props, ctx);
++    const subject = Template.getSubject(options.props, ctx);
+@@ -102 +102 @@
+-        {...(options.props as any)}
++        {...(options.props as unknown)}
+@@ -114 +114 @@
+-        from: options.from || this.config.mail.from,
++        from: options.from ?? this.config.mail.from,

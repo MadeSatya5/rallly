@@ -13,7 +13,7 @@ export type PropsWithClassName<TProps extends Record<string, unknown>> =
   };
 
 // biome-ignore lint/complexity/noBannedTypes: Fix this later
-export type IconComponent<TProps extends Record<string, unknown> = {}> =
+export type IconComponent<TProps extends Record<string, unknown> = object> =
   React.ComponentType<
     React.PropsWithChildren<TProps> & {
       className?: string;

@@ -1,0 +1,5 @@
+--- apps/web/src/app/components/search-input.tsx
++++ apps/web/src/app/components/search-input.tsx
+@@ -19 +19 @@
+-  const currentSearchValue = searchParams.get("q") || "";
++  const currentSearchValue = searchParams.get("q") ?? "";

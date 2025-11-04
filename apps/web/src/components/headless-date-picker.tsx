@@ -67,7 +67,7 @@ export const useHeadlessDatePicker = (
     i++;
     reachedEnd =
       i > 34 && i % 7 === 0 && d.add(1, "day").month() !== currentMonth;
-  } while (reachedEnd === false);
+  } while (!reachedEnd);
 
   return {
     navigationDate: navigationDate.toDate(),

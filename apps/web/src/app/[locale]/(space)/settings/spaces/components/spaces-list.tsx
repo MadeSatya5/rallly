@@ -110,7 +110,7 @@ export function SpacesList({ spaces, currentUserId }: SpacesListProps) {
                   <DropdownMenuItem
                     disabled={isOwner}
                     variant="destructive"
-                    onClick={() => handleLeaveSpace(space)}
+                    onClick={() => { handleLeaveSpace(space); }}
                   >
                     <Trans i18nKey="leaveSpace" defaults="Leave Space" />
                   </DropdownMenuItem>

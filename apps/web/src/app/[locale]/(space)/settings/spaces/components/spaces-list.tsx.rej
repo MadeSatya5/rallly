@@ -1,0 +1,5 @@
+--- apps/web/src/app/[locale]/(space)/settings/spaces/components/spaces-list.tsx
++++ apps/web/src/app/[locale]/(space)/settings/spaces/components/spaces-list.tsx
+@@ -113 +113 @@
+-                    onClick={() => handleLeaveSpace(space)}
++                    onClick={() => { handleLeaveSpace(space); }}

@@ -12,7 +12,7 @@ async function getDatabaseStatus() {
 
 export const GET = async () => {
   const database = await getDatabaseStatus();
-  const version = process.env.NEXT_PUBLIC_APP_VERSION || "unknown";
+  const version = process.env.NEXT_PUBLIC_APP_VERSION ?? "unknown";
   const environment = process.env.NODE_ENV;
   const timestamp = new Date().toISOString();
 

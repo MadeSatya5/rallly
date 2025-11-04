@@ -1,0 +1,5 @@
+--- apps/web/src/utils/form-validation.ts
++++ apps/web/src/utils/form-validation.ts
+@@ -19 +19 @@
+-      if (!value || !value.trim()) {
++      if (!value?.trim()) {

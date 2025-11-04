@@ -1,0 +1,5 @@
+--- apps/web/src/components/discussion/discussion.tsx
++++ apps/web/src/components/discussion/discussion.tsx
+@@ -267 +267 @@
+-              onClick={() => setIsWriting(true)}
++              onClick={() => { setIsWriting(true); }}

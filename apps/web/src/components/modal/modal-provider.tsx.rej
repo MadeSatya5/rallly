@@ -1,0 +1,5 @@
+--- apps/web/src/components/modal/modal-provider.tsx
++++ apps/web/src/components/modal/modal-provider.tsx
+@@ -87 +87 @@
+-              ? props.content({ close: () => removeModalAt(i) })
++              ? props.content({ close: () => { removeModalAt(i); } })

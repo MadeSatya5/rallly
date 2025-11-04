@@ -1,0 +1,8 @@
+--- apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx
++++ apps/web/src/app/[locale]/(auth)/login/components/login-email-form.tsx
+@@ -55 +55 @@
+-              redirectTo: searchParams?.get("redirectTo") ?? undefined,
++              redirectTo: searchParams.get("redirectTo") ?? undefined,
+@@ -65 +65 @@
+-            const redirectTo = searchParams?.get("redirectTo");
++            const redirectTo = searchParams.get("redirectTo");

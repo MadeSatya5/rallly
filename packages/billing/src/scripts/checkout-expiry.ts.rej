@@ -1,0 +1,5 @@
+--- packages/billing/src/scripts/checkout-expiry.ts
++++ packages/billing/src/scripts/checkout-expiry.ts
+@@ -39 +39 @@
+-createAndExpireCheckout();
++void createAndExpireCheckout();

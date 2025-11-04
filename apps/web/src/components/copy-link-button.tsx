@@ -29,7 +29,7 @@ export function CopyLinkButton({
           onClick={() => {
             copy(href);
             setDidCopy(true);
-            setTimeout(() => setDidCopy(false), 1000);
+            setTimeout(() => { setDidCopy(false); }, 1000);
           }}
         >
           <Icon>

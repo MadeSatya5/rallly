@@ -26,7 +26,7 @@ export function I18nProvider({
       resources,
     });
 
-    instance.use(initReactI18next).use(ICU).init();
+    void instance.use(initReactI18next).use(ICU).init();
 
     return instance;
   });

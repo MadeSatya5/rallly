@@ -10,10 +10,10 @@ export const safeSessionStorage = {
     try {
       return typeof window !== "undefined"
         ? window.sessionStorage.getItem(key)
-        : memoryStorage.get(key) || null;
+        : memoryStorage.get(key) ?? null;
     } catch (error) {
       console.warn("Error accessing sessionStorage:", error);
-      return memoryStorage.get(key) || null;
+      return memoryStorage.get(key) ?? null;
     }
   },
 

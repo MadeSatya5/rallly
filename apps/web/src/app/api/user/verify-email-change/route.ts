@@ -79,7 +79,7 @@ export const GET = async (request: NextRequest) => {
 
   const session = await auth();
 
-  if (!session?.user || !session.user.email) {
+  if (!session?.user?.email) {
     return NextResponse.redirect(
       new URL(`/login?redirectTo=${request.url}`, request.url),
     );

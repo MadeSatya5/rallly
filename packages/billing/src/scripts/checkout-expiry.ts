@@ -36,4 +36,4 @@ async function createAndExpireCheckout() {
   console.info("🔍 Dashboard URL: https://dashboard.stripe.com/test/events");
 }
 
-createAndExpireCheckout();
+void createAndExpireCheckout();

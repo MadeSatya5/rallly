@@ -1,0 +1,5 @@
+--- apps/web/src/utils/get-value-by-path.ts
++++ apps/web/src/utils/get-value-by-path.ts
+@@ -7 +7 @@
+-  let curr: any = obj;
++  let curr: unknown = obj;

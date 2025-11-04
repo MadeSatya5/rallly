@@ -1,0 +1,5 @@
+--- apps/landing/src/i18n/middleware.ts
++++ apps/landing/src/i18n/middleware.ts
+@@ -46 +46 @@
+-  const locale = localeInPath || preferredLocale || fallbackLng;
++  const locale = (localeInPath ?? preferredLocale) || fallbackLng;
